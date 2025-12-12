@@ -9,10 +9,12 @@ export default function Footer() {
                         <Image 
                             src="/logo.png"
                             alt="Logo"
-                            width={220}
-                            height={220}
-                            className="object-contain"
-                        />
+                            width={150}
+                            height={50}
+                            loading="eager"
+                            priority
+                            className="w-52 h-auto"
+                        />    
                     </a>
                 </div>
 

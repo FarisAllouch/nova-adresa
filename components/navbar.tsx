@@ -1,35 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
     { name: "Početna", href: "/" },
     { name: "Nekretnine", href: "/nekretnine" },
     { name: "O nama", href: "/about" },
-    { name: "Kontakt", href: "/kontakt" },
+    { name: "Kontakt", href: "/contact" },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) setScrolled(true);
-      else setScrolled(false);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
-      ${scrolled ? "bg-black shadow-lg" : "bg-transparent"}`}
+      className="fixed top-0 left-0 w-full z-50 transition-all bg-black duration-300"
     >
       <div className="w-9/10 mx-auto py-8 flex justify-between items-center">
         
@@ -39,7 +27,9 @@ export default function Navbar() {
             alt="Logo"
             width={150}
             height={50}
-            className="w-50 h-auto"
+            loading="eager"
+            priority
+            className="w-52 h-auto"
           />
         </Link>
 

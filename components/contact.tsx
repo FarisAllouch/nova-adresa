@@ -1,71 +1,103 @@
+import { useState } from "react";
+import ContactTitle from "./contact-title";
+
 export default function Contact() {
-    return (
-        <section
-            className="relative w-full min-h-[80vh] bg-cover bg-center py-24"
-            style={{ backgroundImage: 'url("/kontakt-slika.jpg")' }}
-        >
-        <div className="absolute inset-0 bg-black/50"></div>
+  const [success, setSuccess] = useState(false);
 
-        <div className="relative max-w-5xl mx-auto px-6">
+  async function handleSubmit(e: any) {
+    e.preventDefault();
 
-          <h2 className="text-white text-4xl md:text-6xl font-bold text-center drop-shadow-lg">
-            Kontaktirajte nas
-          </h2>
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      message: e.target.message.value,
+    };
 
-          <p className="text-gray-200 text-center mt-3 text-lg drop-shadow">
-            Tu smo da odgovorimo na sva vaša pitanja.
-          </p>
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-          <div className="mt-12 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8 max-w-3xl mx-auto">
+    if (res.ok) {
+      setSuccess(true);
+      e.target.reset();
 
-            <form className="space-y-6">
+      setTimeout(() => {
+        setSuccess(false);
+      }, 4000);
+    }
+  }
 
-              <div>
-                <label className="text-white font-medium">Ime i prezime</label>
-                <input 
-                  type="text"
-                  className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
-                  placeholder="Vaše ime"
-                />
+  return (
+    <section
+        className="relative w-full min-h-[80vh] bg-cover bg-center py-24"
+        style={{ backgroundImage: 'url("/kontakt-slika.jpg")' }}
+    >
+      <div className="absolute inset-0 bg-black/50"></div>
+      <ContactTitle/>
+
+      <div className="relative max-w-5xl mx-auto px-6">
+        <div className="mt-12 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8 max-w-3xl mx-auto">
+          {success && (
+              <div className="p-4 text-green-900 bg-green-200 border border-green-300 rounded-lg mb-4 animate-fade-in">
+                Poruka je uspješno poslata!
               </div>
+          )}
 
-              <div>
-                <label className="text-white font-medium">Email</label>
-                <input 
-                  type="email"
-                  className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
-                  placeholder="example@email.com"
-                />
-              </div>
+          <form className="space-y-6" onSubmit={handleSubmit}>
 
-              <div>
-                <label className="text-white font-medium">Broj telefona</label>
-                <input 
-                  type="number"
-                  className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
-                  placeholder="Vaš broj telefona"
-                />
-              </div>
+            <div>
+              <label className="text-white font-medium">Ime i prezime</label>
+              <input 
+                type="text"
+                name="name"
+                className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
+                placeholder="Vaše ime"
+              />
+            </div>
 
-              <div>
-                <label className="text-white font-medium">Poruka</label>
-                <textarea
-                  className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
-                  placeholder="Vaša poruka..."
-                ></textarea>
-              </div>
+            <div>
+              <label className="text-white font-medium">Email</label>
+              <input 
+                type="email"
+                name="email"
+                className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
+                placeholder="example@email.com"
+              />
+            </div>
 
-              <button
-                type="submit"
-                className="w-full py-3 mt-4 bg-[#f3c623] text-black font-semibold text-lg rounded-lg shadow-lg hover:bg-[#d9ad1f] hover:scale-[1.03] transition-all duration-300"
-              >
-                Pošalji poruku
-              </button>
+            <div>
+              <label className="text-white font-medium">Broj telefona</label>
+              <input 
+                type="number"
+                name="phone"
+                className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
+                placeholder="Vaš broj telefona"
+              />
+            </div>
 
-            </form>
+            <div>
+              <label className="text-white font-medium">Poruka</label>
+              <textarea
+                name="message"
+                className="w-full mt-2 px-4 py-3 bg-white/20 text-white placeholder-gray-300 rounded-lg outline-none border border-white/30 focus:ring-2 focus:ring-[#f3c623] transition"
+                placeholder="Vaša poruka..."
+              ></textarea>
+            </div>
 
-          </div>
+            <button
+              type="submit"
+              className="w-full py-3 mt-4 bg-[#f3c623] text-black font-semibold text-lg rounded-lg shadow-lg hover:bg-[#d9ad1f] hover:scale-[1.03] transition-all duration-300"
+            >
+              Pošalji poruku
+            </button>
+
+          </form>
+
         </div>
-      </section>
-    )
+      </div>
+    </section>
+  )
 }
