@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Distance() {
     return (
-        <section className="w-full py-10 bg-[#9f9160]">
+        <section className="w-full py-2 bg-yellow-600">
             <div className="max-w-6xl mx-auto">
 
                 <div className="flex flex-wrap justify-center">

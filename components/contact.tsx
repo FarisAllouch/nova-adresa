@@ -89,7 +89,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full py-3 mt-4 bg-[#f3c623] text-black font-semibold text-lg rounded-lg shadow-lg hover:bg-[#d9ad1f] hover:scale-[1.03] transition-all duration-300"
+              className="w-full py-3 mt-4 bg-yellow-600 text-black font-semibold text-lg rounded-lg shadow-lg hover:bg-[#d9ad1f] hover:scale-[1.03] transition-all duration-300"
             >
               Pošalji poruku
             </button>

@@ -126,30 +126,7 @@ export default function About() {
           </motion.div>
         </section>
 
-        {/* VISION */}
-        <section className="relative w-full h-[50vh] mt-20 overflow-hidden">
-          <Image
-            src="/a_1.jpg"
-            alt="Vision Background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/60" />
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center px-5 text-white"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold">Naša Vizija</h2>
-            <p className="mt-4 max-w-3xl text-lg md:text-xl text-neutral-200">
-              Graditi moderne, sigurnе i luksuzne objekte koji podižu standarde
-              savremenog stanovanja.
-            </p>
-          </motion.div>
-        </section>
       </div>
     )
 }

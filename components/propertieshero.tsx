@@ -1,20 +1,40 @@
-"use client"
+"use client";
 
 import { motion } from "framer-motion";
 
 export default function PropertiesHero() {
-    return (
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative w-full h-[40vh] bg-neutral-900 flex items-center justify-center text-center"
-        >
-          <div className="absolute inset-0 bg-black/40"></div>
+  return (
+    <section className="relative w-full h-[45vh] overflow-hidden flex items-center justify-center">
+      
+      <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-emerald-800" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_40%)]" />
 
-          <h1 className="relative text-white text-4xl md:text-6xl font-semibold tracking-wide">
-            Naša ponuda stanova
-          </h1>
-        </motion.section>
-    )
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        className="relative z-10 px-6 text-center"
+      >
+        <span className="inline-block mb-4 px-4 py-1 rounded-full text-sm tracking-wide
+                         bg-white/15 text-white backdrop-blur-md">
+          Nova Adresa · Ponuda  
+        </span>
+
+        <h1 className="text-white text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
+          Naša ponuda
+        </h1>
+
+        <p className="mt-5 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+          Pažljivo odabrane nekretnine na najboljim lokacijama
+        </p>
+
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: 120 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="mx-auto mt-8 h-[2px] bg-[#faaa31]"
+        />
+      </motion.div>
+    </section>
+  );
 }

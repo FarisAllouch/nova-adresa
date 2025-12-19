@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="my-10 text-[#f3c623] text-2xl md:text-3xl font-semibold drop-shadow-xl"
+          className="my-10 text-[#faaa31] text-2xl md:text-3xl font-semibold drop-shadow-xl"
         >
           Ekskluzivni stanovi — već od 3.300 KM/m²
         </motion.p>
@@ -50,9 +50,9 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         >
           <Link
-            href="/nekretnine"
-            className="mt-10 px-10 py-4 bg-[#f3c623] text-black text-lg md:text-xl font-medium rounded-md shadow-xl
-                       hover:bg-[#d9ad1f] transition-all duration-300 hover:scale-105"
+            href="/u-ponudi"
+            className="mt-10 px-10 py-4 bg-[#d9ad1f] text-black text-lg md:text-xl font-medium rounded-md shadow-xl
+                       hover:bg-[#faaa31] transition-all duration-300 hover:scale-105"
           >
             Pogledaj ponudu
           </Link>

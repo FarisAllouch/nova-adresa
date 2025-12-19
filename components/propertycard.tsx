@@ -30,7 +30,7 @@ export default function PropertyCard({ stan }: any) {
         <p className="text-neutral-600">{stan.location}</p>
 
         <Link
-          href={`/nekretnine/${stan.slug.current}`}
+          href={`/u-ponudi/${stan.slug.current}`}
           className="inline-block mt-5 px-5 py-2 bg-[#9f9160] text-white rounded-md"
         >
           Detaljnije

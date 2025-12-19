@@ -15,12 +15,12 @@ export default function Details({ stan }: { stan: any }) {
       {/* HERO */}
       <div
         className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-xl cursor-pointer"
-        onClick={(e) => {
+        onClick={() => {
           setOpen(true);
         }}
       >
         <Image
-          src={urlFor(stan.mainImage).width(1600).url()}
+          src={stan.mainImage}
           alt={stan.title}
           fill
           className="object-cover"
@@ -32,7 +32,7 @@ export default function Details({ stan }: { stan: any }) {
           <h1 className="text-4xl font-bold drop-shadow-lg">{stan.title}</h1>
           <p className="text-[#f3c623] text-2xl font-bold mt-1">{stan.price}</p>
           <p className="text-neutral-200">{stan.location}</p>
-      </div>
+        </div>
       </div>
 
       <GalleryModal

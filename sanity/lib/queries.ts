@@ -17,18 +17,16 @@ export async function getStanovi() {
 }
 
 export async function getStan(slug: string) {
-  return await client.fetch(
-    `*[_type == "stan" && slug.current == $slug][0]{
-      title,
-      slug,
-      price,
-      location,
-      size,
-      mainImage,
-      gallery,
-      description,
-      features
-    }`,
-    { slug }
-  );
+  const query = `*[_type == "stan" && slug.current == $slug][0]{
+    title,
+    price,
+    size,
+    location,
+    description,
+    "mainImage": mainImage.asset->url,
+    "gallery": gallery[].asset->url,
+    features
+  }`;
+
+  return await client.fetch(query, { slug });
 }

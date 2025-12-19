@@ -1,5 +1,4 @@
   import { getStanovi } from "@/sanity/lib/queries";
-  import PropertiesFilters from "@/components/propertiesfilters";
   import PropertiesHero from "@/components/propertieshero";
   import PropertyCard from "@/components/propertycard";
 
@@ -13,7 +12,6 @@
         <PropertiesHero/>
 
         {/* FILTERS */}
-        <PropertiesFilters/>
         {/* CARD GRID */}
 
         <div className="min-h-[calc(100vh-80px)]">
