@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 
-export default function PropertyCard({ stan }: any) {
+export default function PropertyCard({ stan, status }: any) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -30,12 +30,12 @@ export default function PropertyCard({ stan }: any) {
         <p className="text-neutral-600">{stan.location}</p>
 
         <Link
-          href={`/u-ponudi/${stan.slug.current}`}
-          className="inline-block mt-5 px-5 py-2 bg-[#9f9160] text-white rounded-md"
+          href={`/projekti/${status}/${stan.slug.current}`}
+          className="inline-block mt-5 px-5 py-2 bg-[#faaa31] text-white rounded-md"
         >
           Detaljnije
         </Link>
       </div>
-    </motion.div>
-  );
+      </motion.div>
+    );
 }

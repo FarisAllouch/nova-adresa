@@ -78,7 +78,7 @@ export default function ContactPage() {
 
               <div className="flex items-center gap-4">
                 <Phone size={28} className="text-[#f3c623]" />
-                <p className="text-gray-200 text-lg">+387 61 907 248</p>
+                <p className="text-gray-200 text-lg">+387 62 000 446</p>
               </div>
 
               <div className="flex items-center gap-4">

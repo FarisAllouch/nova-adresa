@@ -19,7 +19,7 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center gap-6 text-2xl">
-                    <a href="#" className="hover:text-[#9f9160] transition">  
+                    <a href="https://www.facebook.com/profile.php?id=100076672680099" className="hover:text-[#faaa31] transition">  
                         <span className="[&>svg]:h-8 [&>svg]:w-8">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ export default function Footer() {
                             </svg>
                         </span>
                     </a>
-                    <a href="#" className="hover:text-[#9f9160] transition">  
+                    <a href="https://www.instagram.com/nova.adresaprodaja/" className="hover:text-[#faaa31] transition">  
                         <span className="[&>svg]:h-8 [&>svg]:w-8">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-import Details from "../../../../components/details";
+import Details from "@/components/details";
 import { getStan } from "@/sanity/lib/queries";
 
 export default async function Page({ params }: { params: { slug: string } }) {

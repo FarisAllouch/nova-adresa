@@ -50,7 +50,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         >
           <Link
-            href="/u-ponudi"
+            href="/projekti/u-ponudi"
             className="mt-10 px-10 py-4 bg-[#d9ad1f] text-black text-lg md:text-xl font-medium rounded-md shadow-xl
                        hover:bg-[#faaa31] transition-all duration-300 hover:scale-105"
           >

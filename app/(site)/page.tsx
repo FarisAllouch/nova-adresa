@@ -1,32 +1,38 @@
-import Hero from "../../components/hero";
-import Arhitecture from "../../components/arhitecture";
-import ImageSlider from "../../components/imageslider";
-import Distance from "../../components/distance";
-import Video from "../../components/video";
-import Contact from "../../components/contact";
-import Project from "@/components/project";
+  import Hero from "../../components/hero";
+  import Arhitecture from "../../components/arhitecture";
+  import ImageSlider from "../../components/imageslider";
+  import Distance from "../../components/distance";
+  import Video from "../../components/video";
+  import Contact from "../../components/contact";
+  import Project from "@/components/project";
 
-import { getStanovi } from "@/sanity/lib/queries";
+  import { getIzrada, getDolazak, getZavrseni } from "@/sanity/lib/queries";
 
-export default async function Home() {
+  export default async function Home() {
 
-  const projects = await getStanovi();
+    const u_izradi = await getIzrada();
+    const u_dolasku = await getDolazak();
+    const zavrseni = await getZavrseni();
 
-  return (
-    <>
-      <Hero />
+    return (
+      <>
+        <Hero />
 
-      <Project projects = {projects}/>
+        <Project id="u-izradi" status={"u-izradi"} title = "U izradi" projects = {u_izradi}/>
 
-      <Arhitecture />
-    
-      <ImageSlider />
-    
-      <Distance />
+        <Project id="u-dolasku" status={"u-dolasku"} title = "U dolasku" projects = {u_dolasku}/>
 
-      <Video />
+        <Project id="zavrseni" status={"zavrseni"} title = "Završeni" projects = {zavrseni}/>
 
-      <Contact />
-    </>
-  );  
-}
+        <Arhitecture />
+      
+        <ImageSlider />
+      
+        <Distance />
+
+        <Video />
+
+        <Contact />
+      </>
+    );  
+  }

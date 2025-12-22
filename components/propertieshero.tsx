@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function PropertiesHero() {
+export default function PropertiesHero({title}: {title: string}) {
   return (
     <section className="relative w-full h-[45vh] overflow-hidden flex items-center justify-center">
       
@@ -21,7 +21,7 @@ export default function PropertiesHero() {
         </span>
 
         <h1 className="text-white text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
-          Naša ponuda
+          {title}
         </h1>
 
         <p className="mt-5 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">

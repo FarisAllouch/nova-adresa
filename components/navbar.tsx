@@ -10,11 +10,11 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Početna", href: "/" },
-    { name: "U ponudi", href: "/u-ponudi" },
+    { name: "U ponudi", href: "/projekti/u-ponudi" },
     { name: "Projekti", Children: [
-      { name: "U izradi", href: "/projekti/u-izradi" },
-      { name: "U dolasku", href: "/projekti/u-dolasku" },
-      { name: "Završeni", href: "/projekti/zavrseni" }
+      { name: "U izradi", href: "/#u-izradi" },
+      { name: "U dolasku", href: "/#u-dolasku" },
+      { name: "Završeni", href: "/#zavrseni" }
       ] 
     },
     { name: "Galerija", href: "/galerija" },

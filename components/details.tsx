@@ -3,10 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import GalleryModal from "@/components/gallerymodal";
-import { urlFor } from "@/sanity/lib/image";
 
 export default function Details({ stan }: { stan: any }) {
-  console.log("gallery data:", stan.gallery);
   const [open, setOpen] = useState(false);
 
   return (
