@@ -30,8 +30,6 @@
       
         <Distance />
 
-        <Video />
-
         <Contact />
       </>
     );  

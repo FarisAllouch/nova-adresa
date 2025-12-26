@@ -39,9 +39,15 @@ export default defineType({
         }),
 
         defineField({
+            name: "locationName",
+            title: "Naziv lokacije",
+            type: "string",
+        }),
+
+        defineField({
             name: "location",
             title: "Lokacija",
-            type: "string"
+            type: "geopoint"
         }),
 
         defineField({

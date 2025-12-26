@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import GalleryModal from "@/components/gallerymodal";
+import PropertyMap from "@/components/propertyMap";
 
 export default function Details({ stan }: { stan: any }) {
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-5">
@@ -28,8 +30,8 @@ export default function Details({ stan }: { stan: any }) {
 
         <div className="absolute bottom-5 left-5 text-white">
           <h1 className="text-4xl font-bold drop-shadow-lg">{stan.title}</h1>
-          <p className="text-[#f3c623] text-2xl font-bold mt-1">{stan.price}</p>
-          <p className="text-neutral-200">{stan.location}</p>
+          <p className="text-[#f3c623] text-2xl font-bold mt-1">{stan.fullprice}</p>
+          <p className="text-neutral-200">{stan.locationName}</p>
         </div>
       </div>
 
@@ -40,7 +42,7 @@ export default function Details({ stan }: { stan: any }) {
       />
 
       {/* DETALJI */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-12">
       
         {/* Kocka 1 */}
         <div className="backdrop-blur-lg bg-white/70 border border-white/40 shadow-lg p-6 rounded-xl">
@@ -61,7 +63,7 @@ export default function Details({ stan }: { stan: any }) {
             </svg>
             Lokacija
           </h3>
-          <p className="text-neutral-700 text-lg mt-1">{stan.location}</p>
+          <p className="text-neutral-700 text-lg mt-1">{stan.locationName}</p>
         </div>
 
         {/* Kocka 3 */}
@@ -72,16 +74,34 @@ export default function Details({ stan }: { stan: any }) {
             </svg>
             Cijena
           </h3>
-          <p className="text-neutral-700 text-lg mt-1 font-semibold">{stan.price}</p>
+          <p className="text-neutral-700 text-lg mt-1 font-semibold">{stan.price} KM m2</p>
         </div>
 
       </div>
 
+      <PropertyMap location={stan.location}/>
+    
       {/* OPIS */}
-      <div className="mt-12 bg-white p-8 rounded-2xl shadow-lg leading-relaxed text-neutral-700">
-        <h2 className="text-2xl font-bold mb-3">Opis nekretnine</h2>
-        <p>{stan.description}</p>
+      {stan.description && (
+      <div className="mt-14 bg-white p-10 md:p-14 rounded-2xl shadow-lg 
+                      max-w-5xl mx-auto
+                      text-neutral-700 text-lg leading-8">
+          <h2 className="text-3xl font-bold mb-6 text-neutral-900">
+          Opis
+          </h2>
+
+          <p className={`whitespace-pre-line ${!expanded ? "line-clamp-5" : ""}`}>
+          {stan.description}
+          </p>
+
+          <button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-4 text-lg font-semibold text-[#faaa31] hover:underline"
+          >
+              {expanded ? "Prikaži manje" : "Prikaži više"}
+          </button>
       </div>
+      )}
 
       {/* CTA */}
       <div className="mt-16 p-10 bg-neutral-900 rounded-2xl text-center text-white shadow-lg">

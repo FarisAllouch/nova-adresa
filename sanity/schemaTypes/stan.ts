@@ -28,9 +28,21 @@ export default defineType({
     }),
 
     defineField({
+      name: "fullprice",
+      title: "Puna cijena",
+      type: "string"
+    }),
+
+    defineField({
+      name: "locationName",
+      title: "Naziv lokacija",
+      type: "string",
+    }),
+
+    defineField({
       name: "location",
       title: "Lokacija",
-      type: "string",
+      type: "geopoint"
     }),
 
     defineField({
@@ -57,13 +69,6 @@ export default defineType({
       name: "description",
       title: "Opis",
       type: "text",
-    }),
-
-    defineField({
-      name: "features",
-      title: "Karakteristike",
-      type: "array",
-      of: [{ type: "string" }],
-    }),
+    })
   ],
 });

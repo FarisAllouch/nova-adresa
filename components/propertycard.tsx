@@ -25,9 +25,9 @@ export default function PropertyCard({ stan, status }: any) {
       </div>
 
       <div className="p-6">
-        <p className="text-[#9f9160] font-semibold text-lg">{stan.price}</p>
-        <h3 className="text-2xl font-semibold">{stan.title}</h3>
-        <p className="text-neutral-600">{stan.location}</p>
+        <p className="text-[#9f9160] font-semibold text-lg">{stan.fullprice}</p>
+        <h3 className="text-lg font-semibold">{stan.title}</h3>  
+        <p className="text-neutral-600">{stan.locationName}</p>
 
         <Link
           href={`/projekti/${status}/${stan.slug.current}`}

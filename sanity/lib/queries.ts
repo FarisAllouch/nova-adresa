@@ -6,12 +6,12 @@ export async function getStanovi() {
       title,
       slug,
       price,
+      fullprice,
       location,
       size,
       mainImage,
       gallery,
       description,
-      features
     } | order(_createdAt desc)
   `);
 }
@@ -20,18 +20,22 @@ export async function getStan(slug: string) {
   const query = `*[_type == "stan" && slug.current == $slug][0]{
     title,
     price,
+    fullprice,
     size,
-    location,
+    locationName,
+    location {
+      lat,
+      lng
+    },
     description,
     "mainImage": mainImage.asset->url,
     "gallery": gallery[].asset->url,
-    features
   }`;
   return await client.fetch(query, { slug });
 }
 
 export async function getIzrada() {
-  return  await client.fetch(`
+  return await client.fetch(`
     *[_type == "project" && status == "construction"] | order(_createdAt desc){
       title,
       slug,
@@ -51,7 +55,7 @@ export async function getIzrada() {
 }
 
 export async function getDolazak() {
-  return  await client.fetch(`
+  return await client.fetch(`
     *[_type == "project" && status == "upcoming"] | order(_createdAt desc){
       title,
       slug,
@@ -63,7 +67,7 @@ export async function getDolazak() {
 }
 
 export async function getZavrseni() {
-  return  await client.fetch(`
+  return await client.fetch(`
     *[_type == "project" && status == "completed"] | order(_createdAt desc){
       title,
       slug,
@@ -88,7 +92,11 @@ export async function getProject(slug: string) {
     *[_type == "project" && slug.current == $slug][0]{
       title,
       slug,
-      location,
+      locationName,
+      location {
+        lat,
+        lng
+      },
       description,
 
       "mainImage": mainImage.asset->url,
@@ -107,4 +115,12 @@ export async function getProject(slug: string) {
     `,
     { slug }
   );
+}
+
+export async function getGallery(): Promise<string[]> {
+  return await client.fetch(`
+    array::compact(
+      *[_type == "gallery"].gallery[].asset->url
+    )
+  `);
 }

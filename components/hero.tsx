@@ -9,9 +9,21 @@ export default function Hero() {
       initial={{ opacity: 0, scale: 1.05 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="h-screen bg-cover bg-center relative"
+      className="relative h-screen overflow-hidden"
       style={{ backgroundImage: 'url("/bg-home.jpg")' }}
     >
+
+      <video 
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/novaadresa-promo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       {/* DARK OVERLAY */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -40,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="my-10 text-[#faaa31] text-2xl md:text-3xl font-semibold drop-shadow-xl"
         >
-          Ekskluzivni stanovi — već od 3.300 KM/m²
+          Ekskluzivni stanovi — već od 3.600 KM/m²
         </motion.p>
 
         {/* Dugme */}
