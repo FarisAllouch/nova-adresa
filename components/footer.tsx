@@ -2,10 +2,13 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#111] text-white py-10">
+        <footer className="w-full bg-green-950 text-white py-10">
             <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-15">
                 <div className="flex items-center gap-3">
-                    <a href="">
+                    <a 
+                        href="/"
+                        aria-label="Home page"
+                    >
                         <Image 
                             src="/logo.png"
                             alt="Logo"
@@ -19,7 +22,11 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center gap-6 text-2xl">
-                    <a href="https://www.facebook.com/profile.php?id=100076672680099" className="hover:text-[#faaa31] transition">  
+                    <a 
+                        href="https://www.facebook.com/profile.php?id=100076672680099"
+                        aria-label="Facebook link" 
+                        className="hover:text-[#faaa31] transition"
+                    >  
                         <span className="[&>svg]:h-8 [&>svg]:w-8">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +37,11 @@ export default function Footer() {
                             </svg>
                         </span>
                     </a>
-                    <a href="https://www.instagram.com/nova.adresaprodaja/" className="hover:text-[#faaa31] transition">  
+                    <a 
+                        href="https://www.instagram.com/nova.adresaprodaja/"
+                        aria-label="Instagram link" 
+                        className="hover:text-[#faaa31] transition"
+                    >  
                         <span className="[&>svg]:h-8 [&>svg]:w-8">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

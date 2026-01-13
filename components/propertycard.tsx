@@ -13,14 +13,22 @@ export default function PropertyCard({ stan, status }: any) {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       whileHover={{ scale: 1.04 }}
-      className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+      className="bg-white rounded-xl max-w overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
     >
       <div className="relative w-full h-64">
         <Image
-          src={urlFor(stan.mainImage).width(800).url()}
+          src={urlFor(stan.mainImage)
+            .width(1200)
+            .quality(85)
+            .auto("format")
+            .url()}
           alt={stan.title}
           fill
-          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 800px"
+          className="object-cover contrast-105 saturate-105"
+          placeholder="blur"
+          blurDataURL={urlFor(stan.mainImage).width(20).blur(20).url()}
+          priority
         />
       </div>
 

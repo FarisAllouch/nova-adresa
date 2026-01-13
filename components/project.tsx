@@ -6,7 +6,11 @@ export default function Project({title, projects = [], status, id}: {title: stri
         <section id={id} className="scroll-mt-32 bg-gray-100">
             <PropertiesHero title={title}/>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-4 py-20 max-w-7xl mx-auto">
+            <section className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-12 px-4 py-20 max-w-7xl mx-auto"
+                     style={{
+                        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))"
+                     }}
+            >
                 {projects.map((project: any) => (
                 <PropertyCard key={project.slug.current} status={status} stan={project} />
                 ))}

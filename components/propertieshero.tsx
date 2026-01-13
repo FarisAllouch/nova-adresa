@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function PropertiesHero({title}: {title: string}) {
   return (
-    <section className="relative w-full h-[25vh] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full h-[15vh] overflow-hidden flex items-center justify-center">
       
       <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-emerald-800" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_40%)]" />
@@ -15,20 +15,21 @@ export default function PropertiesHero({title}: {title: string}) {
         transition={{ duration: 0.9, ease: "easeOut" }}
         className="relative z-10 px-6 text-center"
       >
-        <h1 className="text-white text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
+        <h1 className="text-white text-lg md:text-5xl font-semibold tracking-tight leading-tight">
           {title}
         </h1>
-
-        <p className="mt-5 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-          Pažljivo odabrane nekretnine na najboljim lokacijama
-        </p>
 
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: 120 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="mx-auto mt-8 h-[2px] bg-[#faaa31]"
+          className="mx-auto h-[2px] bg-[#faaa31]"
         />
+
+        <p className="mt-1 text-white/80 max-w-2xl mx-auto">
+          Pažljivo odabrane nekretnine na najboljim lokacijama
+        </p>
+
       </motion.div>
     </section>
   );

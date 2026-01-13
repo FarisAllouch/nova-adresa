@@ -10,7 +10,6 @@ export default function Hero() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
       className="relative h-screen overflow-hidden"
-      style={{ backgroundImage: 'url("/bg-home.jpg")' }}
     >
 
       <video 

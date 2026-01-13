@@ -25,8 +25,8 @@ export default function About() {
               O Nama
             </h1>
             <p className="mt-4 text-lg md:text-xl max-w-2xl text-neutral-200">
-              Nova Adresa je moderni pristup tržištu nekretnina — spoj kvaliteta,
-              dizajna i savremene arhitekture.
+              Nova Adresa je kompanija koja donosi savremeni pristup tržištu nekretnina, 
+              kroz spoj kvaliteta, dizajna i moderne arhitekture.
             </p>
           </motion.div>
         </section>
@@ -42,15 +42,31 @@ export default function About() {
           >
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-                Ko smo mi?
+                Poruka direktora
               </h2>
+
               <p className="text-neutral-700 leading-relaxed text-lg">
-                Fokusirani smo na kreiranje stambenih objekata koji pružaju
-                maksimalnu udobnost, kvalitetnu gradnju i moderan dizajn.
+                Želio bih izraziti našu duboku zahvalnost svim našim klijentima
+                koji su proteklih godina vjerovali našim uslugama i pomogli Novoj Adresi da postane uspješna kompanija kakva je danas.
               </p>
+
               <p className="mt-4 text-neutral-700 leading-relaxed text-lg">
-                Svaki naš projekat razvijamo s pažnjom i posvećenošću, prateći
-                najnovije standarde u arhitekturi i konstrukciji.
+                Moj primarni cilj kao osnivača Nove adrese bio je da preuzmem vodstvo u našoj industriji po pitanju kvaliteta rješenja nekretnina po logičnim cijenama koje nudimo.
+              </p>
+
+              <p className="mt-4 text-neutral-700 leading-relaxed text-lg">
+                Glavni razlog našeg uspjeha je oslanjanje na funkcionalnu inženjersku školu u građevinarstvu uz zadržavanje jednostavnosti i elegancije.
+              </p>
+
+              <p className="mt-4 text-neutral-700 leading-relaxed text-lg">
+                Jedinstveni spoj predanosti i samopouzdanja suština je kulture naše organizacije.
+              </p>
+
+              <p className="mt-4 text-[#faaa31] leading-relaxed text-lg">
+                Mr.Ouael Asremp
+              </p>
+              <p className="text-[#faaa31] leading-relaxed text-lg">
+                MSc. Civil Engineering , MBA
               </p>
             </div>
 
@@ -62,10 +78,10 @@ export default function About() {
               className="relative h-[380px] rounded-2xl overflow-hidden shadow-xl"
             >
               <Image
-                src="/about-interior.jpg"
-                alt="Interior"
+                src="/wael.jpeg"
+                alt="Wael"
                 fill
-                className="object-cover"
+                className="object-cover object-[50%_75%]"
               />
             </motion.div>
           </motion.div>
