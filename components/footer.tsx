@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-green-950 text-white py-10">
+        <footer className="w-full bg-[linear-gradient(135deg,#022c22,#064e3b,#047857),radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_40%)] text-white py-10">
             <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-15">
                 <div className="flex items-center gap-3">
                     <a 

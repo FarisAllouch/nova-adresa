@@ -8,7 +8,7 @@ export async function POST(req) {
 
     const result = await resend.emails.send({
       from: "Nova Adresa <noreply@nova-adresa.com>",
-      to: ["info@nova-adresa.com"],
+      to: ["allouchfaris21@gmail.com"],
       replyTo: email,
       subject: "Nova poruka sa kontakt forme",
       html: `

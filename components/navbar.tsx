@@ -23,7 +23,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-green-950">
+    <nav className="fixed w-full z-50 bg-[linear-gradient(135deg,#022c22,#064e3b,#047857),radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_40%)]">
+
       <div className="grid max-w-10xl mx-5 grid-cols-[auto_1fr_auto] items-center py-7">
         <Link href="/" className="justify-self-start">
           <Image

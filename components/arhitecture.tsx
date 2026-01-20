@@ -14,16 +14,39 @@ export default function Arhitecture() {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     className="flex flex-col md:mb-18 mt-15 md:flex-row justify-between items-start"
                 >
-                    <h2 className="relative text-4xl mb-5 md:text-7xl font-medium tracking-wide text-neutral-900
-                        before:content-[''] before:block before:h-[15px] before:bg-[#faaa31] before:mb-4 before:w-full"
+                    <h2
+                    className="
+                    relative
+                    text-3xl sm:text-4xl md:text-7xl
+                    mb-4 md:mb-5
+                    font-medium tracking-wide
+                    text-neutral-900
+                    px-4 sm:px-0
+                    before:content-['']
+                    before:block
+                    before:h-[12px] md:before:h-[15px]
+                    before:bg-[#faaa31]
+                    before:mb-3 md:before:mb-4
+                    before:w-full
+                    "
                     >
-                        Moderna <br /> arhitektura
+                    Moderna <br /> arhitektura
                     </h2>
 
-                    <p className="max-w-xl text-neutral-600 sm:ml-5 text-xl leading-relaxed">
-                        Naši prostori dizajnirani su s jasnom vizijom - spoj funkcionalnosti, elegancije i savremene estetike.
-                        Svaki detalj je promišljeno oblikovan kako bi stvorio harmoniju između prirodnog svjetla, otvorenih površina i vrhunskih materijala.
-                        Rezultat je životni prostor koji izgleda moderno, djeluje prostrano i pruža osjećaj luksuza u svakom trenutku.
+                    <p
+                    className="
+                        max-w-xl
+                        px-4 sm:px-0
+                        text-base sm:text-lg md:text-xl
+                        text-neutral-600
+                        leading-relaxed
+                        sm:ml-5
+                    "
+                    >
+                    Naši prostori dizajnirani su s jasnom vizijom – spoj funkcionalnosti, elegancije i savremene estetike.
+                    Svaki detalj je promišljeno oblikovan kako bi stvorio harmoniju između prirodnog svjetla,
+                    otvorenih površina i vrhunskih materijala.
+                    Rezultat je životni prostor koji izgleda moderno, djeluje prostrano i pruža osjećaj luksuza u svakom trenutku.
                     </p>
                 </motion.div>
 
